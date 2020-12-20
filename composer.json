@@ -3,3 +3,22 @@
         "aws/aws-sdk-php": "^3.171"
     }
 }
+{
+    "name": "calculator",
+    "description": "This is a simple calculator for multiplication",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kelechukwu Chima",
+            "email": "yekachima@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "CPP_Project\\Calculator\\": "src/"
+        }
+    },
+    
