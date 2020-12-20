@@ -93,7 +93,7 @@ foreach($results as $row)
 		<div class="arrival-grids">			 
 			 <ul id="flexiselDemo1">
 				 <li>
-					 <a href="index.php"><img src="images/s1.jpg" alt=""/>
+					 <a href="index.php"><img src="s3://cpp-1" alt=""/>
 					 </a>
 				 </li>
 				 <li>
