@@ -31,6 +31,40 @@ else
 $img=md5($img).time().$extension;
  move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$img);
 $sql="insert into tblroom(RoomType,RoomName,MaxAdult,MaxChild,RoomDesc,NoofBed,Image,RoomFacility)values(:roomtype,:roomname,:maxadult,:maxchild,:roomdes,:nobed,:img,:roomfac)";
+//<?php
+	if(isset($_FILES['image'])){
+		$file_name = $_FILES['image']['name'];   
+		$temp_file_location = $_FILES['image']['tmp_name']; 
+
+		require 'vendor/autoload.php';
+
+		$s3 = new Aws\S3\S3Client([
+			'region'  => '-- your region --',
+			'version' => 'latest',
+			'credentials' => [
+				'key'    => "-- access key id --",
+				'secret' => "-- secret access key --",
+			]
+		]);		
+
+		$result = $s3->putObject([
+			'Bucket' => '-- bucket name --',
+			'Key'    => $file_name,
+			'SourceFile' => $temp_file_location			
+		]);
+
+		var_dump($result);
+	}
+?>//
+
+<form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">         
+	<input type="file" name="image" />
+	<input type="submit"/>
+</form> 	
+	
+	
+	
+	
 $query=$dbh->prepare($sql);
 $query->bindParam(':roomtype',$roomtype,PDO::PARAM_STR);
 $query->bindParam(':roomname',$roomname,PDO::PARAM_STR);
