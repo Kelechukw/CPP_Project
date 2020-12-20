@@ -1,8 +1,8 @@
 <?php 
 // DB credentials.
-define('DB_HOST','localhost');
-define('DB_USER','root');
-define('DB_PASS','');
+define('DB_HOST','database-2.csnql2pkuxse.eu-west-1.rds.amazonaws.com');
+define('DB_USER','admin');
+define('DB_PASS','pulchritude');
 define('DB_NAME','hbmsdb');
 // Establish database connection.
 try
