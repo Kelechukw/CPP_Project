@@ -28,7 +28,6 @@ if (strlen($_SESSION['hbmsaid']==0)) {
 <script src="js/amcharts.js"></script>	
 <script src="js/serial.js"></script>	
 <script src="js/light.js"></script>	
-<!-- //lined-icons -->
 <script src="js/jquery-1.10.2.min.js"></script>
    <!--pie-chart--->
 <script src="js/pie-chart.js" type="text/javascript"></script>
